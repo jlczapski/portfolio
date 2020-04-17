@@ -81,10 +81,21 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./src/css/styles.css":
+/*!****************************!*\
+  !*** ./src/css/styles.css ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/styles.css?");
+
+/***/ }),
 
 /***/ "./src/js/main.js":
 /*!************************!*\
@@ -93,7 +104,18 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"hello world!\");\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("console.log(\"hello new!\");\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!***************************************************!*\
+  !*** multi ./src/js/main.js ./src/css/styles.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! ./src/js/main.js */\"./src/js/main.js\");\nmodule.exports = __webpack_require__(/*! ./src/css/styles.css */\"./src/css/styles.css\");\n\n\n//# sourceURL=webpack:///multi_./src/js/main.js_./src/css/styles.css?");
 
 /***/ })
 
