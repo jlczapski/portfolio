@@ -1,7 +1,52 @@
 module.exports = {
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [],
-}
+	theme: {
+		fontFamily: {
+			rubik: ["Rubik", "sans-serif"],
+			montserrat: ["Montserrat", "sans-serif"],
+			inter: [
+				"Inter",
+				"-apple-system",
+				"BlinkMacSystemFont",
+				"Segoe UI",
+				"Roboto",
+				"Oxygen",
+				"Ubuntu",
+				"Cantarell",
+				"Helvetica Neue",
+				"sans-serif",
+				"Arial",
+			],
+			"inter-light": [
+				"Inter\\ Light",
+				"-apple-system",
+				"BlinkMacSystemFont",
+				"Segoe UI",
+				"Roboto",
+				"Oxygen",
+				"Ubuntu",
+				"Cantarell",
+				"Helvetica Neue",
+				"sans-serif",
+				"Arial",
+			],
+		},
+		backgroundColor: (theme) => ({
+			...theme("colors"),
+			body: "#FCFCFC",
+			"rich-blue": "#0000FF",
+			"bright-yellow": "#FFCC00",
+		}),
+		borderColor: (theme) => ({
+			...theme("colors"),
+			"rich-blue": "#0000FF",
+			"bright-yellow": "#FFCC00",
+		}),
+		textColor: (theme) => ({
+			...theme("colors"),
+			"rich-blue": "#0000FF",
+			"bright-yellow": "#FFCC00",
+		}),
+	},
+	variants: {},
+	plugins: [],
+};

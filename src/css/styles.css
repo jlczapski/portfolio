@@ -3,3 +3,76 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+/** IMAGES **/
+.svg-icon {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+/** FONTS **/
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.woff') format('woff'),
+        url('/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter Light';
+    src: url('/fonts/Inter-Light.woff') format('woff'),
+        url('/fonts/Inter-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** DESIGN **/
+.divider {
+	width: 22px;
+	height: 3px;
+	@apply bg-rich-blue;
+}
+
+.highlight {
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 70%,
+		#ffcc00 70%
+	);
+	background-position: 0 297px;
+}
+
+.highlight-mobile {
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 70%,
+		#ffcc00 70%
+	);
+	background-position: 0 100px;
+}
+
+/** RESPONSIVE **/
+@media (min-width: 1024px) {
+	.highlight {
+		background-position: 0 100px;
+	}
+}
+
+@media (min-width: 768px) {
+	.highlight-mobile {
+		background: none;
+	}
+}
+
+@media (max-width: 768px) and (min-width: 640px) {
+	.highlight-mobile {
+		background-position: 0 551px;
+	}
+}
+
+@media (max-width: 640px) {
+	.highlight-mobile {
+		background-position: 0 57px;
+	}
+}
