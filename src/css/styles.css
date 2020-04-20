@@ -10,24 +10,65 @@
 	height: 1.5rem;
 }
 
+.svg-icon-contact {
+	width: 2rem;
+	height: auto;
+}
+
+.svg-icon rect,
+.svg-icon-contact rect {
+	fill: #ffcc00;
+	transform: translateY(100%);
+	transition: transform 0.23s ease-in-out;
+}
+
+.svg-icon:hover rect,
+.svg-icon-contact:hover rect {
+	transform: translateY(0);
+}
+
 /** FONTS **/
 @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/Inter-Regular.woff') format('woff'),
-        url('/fonts/Inter-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Inter";
+	src: url("/fonts/Inter-Regular.woff") format("woff"),
+		url("/fonts/Inter-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Inter Light';
-    src: url('/fonts/Inter-Light.woff') format('woff'),
-        url('/fonts/Inter-Light.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Inter Light";
+	src: url("/fonts/Inter-Light.woff") format("woff"),
+		url("/fonts/Inter-Light.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
 }
 
 /** DESIGN **/
+.btn-download {
+	position: relative;
+}
+
+.btn-download::before {
+	content: "";
+	position: absolute;
+	background-color: #ffcc00;
+	top: 100%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	transition: all 0.23s ease-in-out;
+}
+
+.btn-download:hover::before {
+	top: 0;
+}
+
+.btn-download:hover {
+	@apply text-white;
+}
+
 .divider {
 	width: 22px;
 	height: 3px;
