@@ -1,8 +1,7 @@
 module.exports = {
 	theme: {
 		fontFamily: {
-			rubik: ["Rubik", "sans-serif"],
-			montserrat: ["Montserrat", "sans-serif"],
+			"eina-bold": ["Eina\\ Bold"],
 			inter: [
 				"Inter",
 				"-apple-system",

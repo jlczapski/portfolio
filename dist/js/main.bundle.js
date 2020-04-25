@@ -104,7 +104,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"hello test!\");\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ }),
 
