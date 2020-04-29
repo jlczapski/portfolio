@@ -31,7 +31,9 @@ module.exports = {
 		},
 		backgroundColor: (theme) => ({
 			...theme("colors"),
-			body: "#FCFCFC",
+			accent: "var(--colour-accent)",
+			body: "var(--colour-bg)",
+			highlight: "var(--colour-highlight)",
 			"darkest-blue": "#091540",
 			"grey-blue": "#3D518C",
 			"flower-blue": "#7692FF",
@@ -39,6 +41,8 @@ module.exports = {
 		}),
 		borderColor: (theme) => ({
 			...theme("colors"),
+			accent: "var(--colour-accent)",
+			highlight: "var(--colour-highlight)",
 			"darkest-blue": "#091540",
 			"grey-blue": "#3D518C",
 			"flower-blue": "#7692FF",
@@ -46,6 +50,11 @@ module.exports = {
 		}),
 		textColor: (theme) => ({
 			...theme("colors"),
+			accent: "var(--colour-accent)",
+			title: "var(--colour-title)",
+			body: "var(--colour-body)",
+			button: "var(--colour-button-text)",
+			highlight: "var(--colour-highlight)",
 			"darkest-blue": "#091540",
 			"grey-blue": "#3D518C",
 			"flower-blue": "#7692FF",

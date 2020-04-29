@@ -104,7 +104,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("const toggleSwitch = document.querySelector(\n\t\".toggle-switch input[type='checkbox']\"\n);\n\nwindow.onload = function () {\n\ttoggleSwitch.checked = false;\n};\n\nconst switchTheme = (e) => {\n\tconst checked = e.target.checked;\n\n\tif (checked) {\n\t\tdocument.body.classList.replace(\"light\", \"dark\");\n\t} else {\n\t\tdocument.body.classList.replace(\"dark\", \"light\");\n\t}\n};\n\ntoggleSwitch.addEventListener(\"change\", switchTheme, false);\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ }),
 

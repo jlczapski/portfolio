@@ -4,6 +4,28 @@
 /* purgecss end ignore */
 @import "tailwindcss/utilities";
 
+/** LIGHT MODE COLOURS **/
+/* purgecss ignore */
+:root {
+	--colour-accent: #72a4f2;
+	--colour-bg: #fcfcfc;
+	--colour-body: #4a5568;
+	--colour-button-text: #fcfcfc;
+	--colour-highlight: #3071d5;
+	--colour-title: #091540;
+}
+
+/** DARK MODE COLOURS **/
+.dark {
+	--colour-accent: #aecbf8;
+	--colour-bg: #121212;
+	--colour-body: hsla(0, 0%, 100%, 0.7);
+	--colour-button-text: #102647;
+	--colour-highlight: hsla(216, 84%, 83%, 0.87);
+	--colour-title: hsla(0, 0%, 100%, 0.87);
+}
+/* purgecss end ignore */
+
 /** IMAGES **/
 .svg-icon {
 	width: 1.5rem;
@@ -11,9 +33,9 @@
 }
 
 .svg-icon rect {
-	fill: #7692ff;
+	fill: var(--colour-highlight);
 	transform: translateY(100%);
-	transition: transform 0.23s ease-in-out;
+	transition: all 0.35s cubic-bezier(0.68, 0, 0.265, 1);
 }
 
 .svg-icon:hover rect {
@@ -28,7 +50,8 @@
 /** FONTS & TEXT **/
 @font-face {
 	font-family: "Eina Bold";
-	src: url("/fonts/Eina-Bold.ttf") format("truetype");
+	src: url("/fonts/Eina-Bold.woff") format("woff"),
+		url("/fonts/Eina-Bold.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -49,15 +72,6 @@
 	font-style: normal;
 }
 
-.btn span {
-	color: hsl(228, 17%, 99%);
-}
-
-.link span {
-	@apply text-grey-blue;
-	text-decoration: underline;
-}
-
 /** LISTS **/
 .list-icon li {
 	padding-left: 2rem;
@@ -68,7 +82,9 @@
 	position: absolute;
 	top: 5%;
 	left: 0;
-	background: url("/img/check.svg");
+	background-color: var(--colour-highlight);
+	mask: url("/img/check.svg") no-repeat 100% 100%;
+	mask-size: cover;
 	background-size: 20px 20px;
 	width: 20px;
 	height: 20px;
@@ -82,7 +98,7 @@
 	top: 100%;
 	width: 30px;
 	height: 3px;
-	@apply bg-flower-blue;
+	background-color: var(--colour-accent);
 }
 
 .btn-download {
@@ -90,7 +106,7 @@
 }
 
 .btn-download::before {
-	@apply bg-flower-blue;
+	background-color: var(--colour-highlight);
 	content: "";
 	width: 0;
 	height: 100%;
@@ -106,6 +122,57 @@
 
 .btn-download:hover::before {
 	width: 100%;
+}
+
+.link span {
+	transition: all 0.3s ease-in-out;
+}
+
+.link:hover span {
+	color: var(--colour-highlight);
+}
+
+#toggleDarkMode:checked + label {
+	@apply bg-accent;
+}
+
+#toggleDarkMode:checked + label::after {
+	@apply bg-white;
+}
+
+.toggle-switch {
+	width: 45px;
+}
+
+.toggle-switch input {
+	visibility: hidden;
+	position: absolute;
+	z-index: 2;
+}
+
+.toggle-switch label {
+	cursor: pointer;
+	width: 47.5px;
+	height: 27.5px;
+	border-radius: 20px;
+	transition: all 0.35s cubic-bezier(0.68, 0, 0.265, 1);
+}
+
+.toggle-switch label::after {
+	@apply bg-accent;
+	content: "";
+	border-radius: 50%;
+	position: absolute;
+	left: 3px;
+	top: 1.75px;
+	width: 20px;
+	height: 20px;
+	transform: translateX(0);
+	transition: all 0.35s cubic-bezier(0.68, 0, 0.265, 1);
+}
+
+.toggle-switch input:checked + label::after {
+	transform: translateX(calc(100% - 0.5px));
 }
 
 /** RESPONSIVE **/
