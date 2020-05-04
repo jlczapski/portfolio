@@ -9,7 +9,7 @@ module.exports = {
 			content: ["./src/**/*.html"],
 			defaultExtractor: (content) =>
 				content.match(/[\w-/:]+(?<!:)/g) || [],
-			whitelist: ["light", "dark"],
+			whitelist: ["light", "dark", "slide-right"],
 		}),
 		cssnano({
 			preset: "default",

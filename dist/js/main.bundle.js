@@ -97,14 +97,39 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 
 /***/ }),
 
+/***/ "./src/js/DarkMode/DarkMode.js":
+/*!*************************************!*\
+  !*** ./src/js/DarkMode/DarkMode.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar DarkMode = function DarkMode(currentTheme, toggleSwitch) {\n  var _this = this;\n\n  _classCallCheck(this, DarkMode);\n\n  this.init = function () {\n    if (_this.currentTheme === \"dark\") {\n      document.body.classList.replace(\"light\", \"dark\");\n      _this.toggleSwitch.checked = true;\n    } else {\n      _this.toggleSwitch.checked = false;\n    }\n  };\n\n  this.switchTheme = function (e) {\n    var checked = e.target.checked;\n\n    if (checked) {\n      document.body.classList.replace(\"light\", \"dark\");\n      localStorage.setItem(\"theme\", \"dark\");\n    } else {\n      document.body.classList.replace(\"dark\", \"light\");\n      localStorage.setItem(\"theme\", \"light\");\n    }\n  };\n\n  this.currentTheme = currentTheme;\n  this.toggleSwitch = toggleSwitch;\n  this.init();\n  toggleSwitch.addEventListener(\"change\", this.switchTheme, false);\n}\n/**\n * Check if user pref was previously saved in\n * localStorage, set switch accordingly.\n *\n * @param {HTMLElement} toggleSwitch\n */\n;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (DarkMode);\n\n//# sourceURL=webpack:///./src/js/DarkMode/DarkMode.js?");
+
+/***/ }),
+
+/***/ "./src/js/Scroll/Scroll.js":
+/*!*********************************!*\
+  !*** ./src/js/Scroll/Scroll.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Scroll = function Scroll(selectors) {\n  var _this = this;\n\n  _classCallCheck(this, Scroll);\n\n  this.init = function () {\n    _this.selectors.forEach(function (selector) {\n      _this.elems.push(document.querySelector(selector));\n    });\n  };\n\n  this.elemInViewport = function (elem) {\n    var rect = elem.getBoundingClientRect();\n    return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);\n  };\n\n  this.checkScrollPos = function () {\n    _this.elems.forEach(function (elem) {\n      if (_this.elemInViewport(elem)) {\n        elem.classList.add(\"slide-right\");\n      }\n    });\n  };\n\n  this.selectors = selectors;\n  this.elems = [];\n  this.init();\n  window.addEventListener(\"scroll\", this.checkScrollPos, false);\n}\n/**\n * Create arr of elements from selectors.\n */\n;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Scroll);\n\n//# sourceURL=webpack:///./src/js/Scroll/Scroll.js?");
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("const toggleSwitch = document.querySelector(\n\t\".toggle-switch input[type='checkbox']\"\n);\n\nwindow.onload = function () {\n\ttoggleSwitch.checked = false;\n};\n\nconst switchTheme = (e) => {\n\tconst checked = e.target.checked;\n\n\tif (checked) {\n\t\tdocument.body.classList.replace(\"light\", \"dark\");\n\t} else {\n\t\tdocument.body.classList.replace(\"dark\", \"light\");\n\t}\n};\n\ntoggleSwitch.addEventListener(\"change\", switchTheme, false);\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _DarkMode_DarkMode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DarkMode/DarkMode */ \"./src/js/DarkMode/DarkMode.js\");\n/* harmony import */ var _Scroll_Scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Scroll/Scroll */ \"./src/js/Scroll/Scroll.js\");\n\n\nvar scroll = new _Scroll_Scroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"]([\".skills .text-title\", \".contact .text-title\"]);\nvar darkMode = new _DarkMode_DarkMode__WEBPACK_IMPORTED_MODULE_0__[\"default\"](localStorage.getItem(\"theme\"), document.querySelector(\"#toggleDarkMode\"));\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ }),
 

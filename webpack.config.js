@@ -14,6 +14,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.js$/,
+				loader: "babel-loader",
+				exclude: /node_modules/,
+			},
+			{
 				test: /\.css$/,
 				use: [
 					{
@@ -30,6 +35,11 @@ module.exports = {
 			hash: true,
 			template: "src/index.html",
 			filename: "index.html",
+		}),
+		new HTMLWebpackPlugin({
+			hash: true,
+			template: "src/error.html",
+			filename: "error.html",
 		}),
 		new MiniCssExtractPlugin({
 			filename: "css/[name].css",
