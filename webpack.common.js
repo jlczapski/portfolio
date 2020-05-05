@@ -6,7 +6,6 @@ module.exports = {
 	entry: {
 		main: ["./src/js/main.js", "./src/css/styles.css"],
 	},
-	mode: "development",
 	output: {
 		filename: "js/[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
@@ -43,14 +42,6 @@ module.exports = {
 		}),
 		new MiniCssExtractPlugin({
 			filename: "css/[name].css",
-		}),
+		}),		
 	],
-	devServer: {
-		contentBase: path.join(__dirname, "dist"),
-		compress: true,
-		port: 3000,
-		proxy: {
-			"/downloads": "http://localhost:8000",
-		},
-	},
 };

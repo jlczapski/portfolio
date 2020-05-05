@@ -4,6 +4,37 @@
 /* purgecss end ignore */
 @import "tailwindcss/utilities";
 
+/** FONTS & TEXT **/
+@font-face {
+	font-family: "Eina Bold";
+	font-style: normal;
+	font-weight: 600;
+	font-display: auto;
+	src: url("/fonts/Eina-Bold.woff2") format("woff2"),
+		url("/fonts/Eina-Bold.woff") format("woff");
+	unicode-range: U+000-5FF;
+}
+
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url("/fonts/Inter-Regular.woff") format("woff2"),
+		url("/fonts/Inter-Regular.woff") format("woff");
+	unicode-range: U+000-5FF;
+}
+
+@font-face {
+	font-family: "Inter Light";
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: url("/fonts/Inter-Light.woff2") format("woff2"),
+		url("/fonts/Inter-Light.woff") format("woff");
+	unicode-range: U+000-5FF;
+}
+
 /** LIGHT MODE COLOURS **/
 /* purgecss ignore */
 :root {
@@ -47,31 +78,6 @@
 	height: 1.75rem;
 }
 
-/** FONTS & TEXT **/
-@font-face {
-	font-family: "Eina Bold";
-	src: url("/fonts/Eina-Bold.woff") format("woff"),
-		url("/fonts/Eina-Bold.woff2") format("woff2");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Inter";
-	src: url("/fonts/Inter-Regular.woff") format("woff"),
-		url("/fonts/Inter-Regular.woff2") format("woff2");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Inter Light";
-	src: url("/fonts/Inter-Light.woff") format("woff"),
-		url("/fonts/Inter-Light.woff2") format("woff2");
-	font-weight: normal;
-	font-style: normal;
-}
-
 /** LISTS **/
 .list-icon li {
 	padding-left: 2rem;
@@ -80,7 +86,7 @@
 .list-icon li::before {
 	content: "";
 	position: absolute;
-	top: 5%;
+	top: 7.5%;
 	left: 0;
 	background-color: var(--colour-highlight);
 	mask: url("/img/check.svg") no-repeat 100% 100%;
@@ -99,29 +105,7 @@
 	width: 30px;
 	height: 3px;
 	background-color: var(--colour-accent);
-}
-
-.btn-download {
-	transition: all 0.35s cubic-bezier(0.68, 0, 0.265, 1);
-}
-
-.btn-download::before {
-	background-color: var(--colour-highlight);
-	content: "";
-	width: 0;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	transition: all 0.35s cubic-bezier(0.68, 0, 0.265, 1);
-}
-
-.btn-download:hover {
-	@apply text-white;
-}
-
-.btn-download:hover::before {
-	width: 100%;
+	margin-top: 0.3rem;
 }
 
 .link span {
