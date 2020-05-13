@@ -35,13 +35,8 @@ module.exports = {
 			template: "src/index.html",
 			filename: "index.html",
 		}),
-		new HTMLWebpackPlugin({
-			hash: true,
-			template: "src/error.html",
-			filename: "error.html",
-		}),
 		new MiniCssExtractPlugin({
 			filename: "css/[name].css",
-		}),		
+		}),
 	],
 };
